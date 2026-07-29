@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Отзывы</title></head>
+<body>
+  <h1>reviews.json</h1>
+  <pre id="data"></pre>
+  <script>
+    fetch("reviews.json")
+      .then(r => r.json())
+      .then(d => document.getElementById("data").textContent = JSON.stringify(d, null, 2))
+      .catch(e => document.getElementById("data").textContent = "Ошибка загрузки: " + e);
+  </script>
+</body>
+</html>
